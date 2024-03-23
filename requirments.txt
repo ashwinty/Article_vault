@@ -1,7 +1,7 @@
 langchain
 langchain-community
 langchain-core
-langchain-openaios
+langchain-openai
 pandas
 transformers
 torch
@@ -10,3 +10,4 @@ llama_index.core
 llama-index-vector-stores-faiss
 streamlit
 openai
+faiss-cpu
