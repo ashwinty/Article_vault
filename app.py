@@ -27,6 +27,7 @@ if st.button("Search"):
         
         # Append query and response to search history
         st.session_state.search_history.append({'query': query, 'response': output})
+        # print(output)
 
         # Display search results
         for i, result in enumerate(output, 1):
@@ -39,6 +40,7 @@ if st.button("Search"):
             st.write("- **Article URL:**", result[0][4])
             st.write("- **Description:**", result[0][5])
             st.write("- **Main Image URL:**", result[0][6])
+            st.write("- **Page Number:**", result[0][7])
             
             # Display highlighted text
             st.markdown(result[1], unsafe_allow_html=True)
