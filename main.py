@@ -14,7 +14,7 @@ logging.basicConfig(stream=sys.stdout, level=logging.INFO)
 logging.getLogger().addHandler(logging.StreamHandler(stream=sys.stdout))
 
 # Load data for vector searching
-documents = SimpleDirectoryReader(input_files=["final_data-file.json"]).load_data()
+documents = SimpleDirectoryReader(input_files=["final_data-file3.json"]).load_data()
 os.environ['OPENAI_API_KEY'] = " "
 
 # Load vector store
@@ -72,7 +72,7 @@ def to_run(query):
         metadata = node.metadata
         text = node.text
         highlighted_response = highlight_matching_sentence(query, text)  # Highlight sentences
-        formatted_response = ([metadata["Title"], metadata["Tag"], metadata["Author"], metadata["Date"], metadata["Article URL"], metadata["Description"], metadata["Main Image URL"]], highlighted_response)
+        formatted_response = ([metadata["Title"], metadata["Tag"], metadata["Author"], metadata["Date"], metadata["Article URL"], metadata["Description"], metadata["Main Image URL"],metadata["Page Number"]], highlighted_response)
         formatted_responses.append(formatted_response)
     return formatted_responses
 
