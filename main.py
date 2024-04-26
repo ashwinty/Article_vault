@@ -15,7 +15,7 @@ logging.getLogger().addHandler(logging.StreamHandler(stream=sys.stdout))
 
 # Load data for vector searching
 documents = SimpleDirectoryReader(input_files=["final_data-file3.json"]).load_data()
-os.environ['OPENAI_API_KEY'] = " "
+#os.environ['OPENAI_API_KEY'] = " "
 
 # Load vector store
 vector_store = FaissVectorStore.from_persist_dir(persist_dir="./storage")
